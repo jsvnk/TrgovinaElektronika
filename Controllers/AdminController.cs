@@ -2,10 +2,13 @@
 
 namespace TrgovinaElektronika.Controllers
 {
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
         public IActionResult Index()
         {
+            if (HttpContext.Session.GetString("Uporabnik") != "Admin")
+                return Unauthorized();
+
             return View();
         }
     }

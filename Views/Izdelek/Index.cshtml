@@ -1,0 +1,44 @@
+﻿@model List<TrgovinaElektronika.Models.Izdelek>
+
+<h2>Izdelki v ponudbi</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Opis</th>
+            <th>Cena</th>
+            <th>Zaloga</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var izdelek in Model)
+        {
+            <tr>
+                <td>@izdelek.Naziv</td>
+                <td>@izdelek.Opis</td>
+                <td>@izdelek.Cena €</td>
+                <td>@izdelek.Zaloga</td>
+                <td>
+                    @if (Context.Session.GetString("Uporabnik") == "Admin")
+                    {
+                        <a asp-action="Uredi" asp-route-id="@izdelek.Id">Uredi</a>
+                        <a asp-action = "Izbrisi" asp-route-id = "@izdelek.Id" > Izbrisi </a>
+                    }
+                    else
+                    {
+                        <span class="text-muted">—</span>
+                    }
+                </td>
+
+
+                <td><a href="/Kosarica/Dodaj/@izdelek.Id">Dodaj v košarico</a></td>
+            </tr>
+        }
+    </tbody>
+    @if (Context.Session.GetString("Uporabnik") == "Admin")
+    {
+        <a class="btn btn-success mb-3" href="/Izdelek/Dodaj">+ Dodaj izdelek</a>
+    }
+
+</table>

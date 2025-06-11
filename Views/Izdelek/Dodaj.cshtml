@@ -1,0 +1,26 @@
+﻿@model TrgovinaElektronika.Models.Izdelek
+@{
+    ViewData["Title"] = "Dodaj izdelek";
+}
+
+<h2>Dodaj izdelek</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label>Naziv</label>
+        <input type="text" name="Naziv" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Opis</label>
+        <input type="text" name="Opis" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Cena</label>
+        <input type="number" step="0.01" name="Cena" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Zaloga</label>
+        <input type="number" name="Zaloga" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-success">Shrani</button>
+</form>

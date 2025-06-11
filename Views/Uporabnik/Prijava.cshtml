@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Prijava uporabnika";
+}
+
+<h2 class="mt-4">Prijava uporabnika</h2>
+
+<div class="row mt-3">
+    <div class="col-md-6 offset-md-3">
+        <form method="post" class="border rounded p-4 shadow-sm bg-light">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email naslov</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="vnesi email" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="geslo" class="form-label">Geslo</label>
+                <input type="password" name="geslo" id="geslo" class="form-control" placeholder="vnesi geslo" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Prijavi se</button>
+            <p class="mt-3">Nimaš računa? <a href="/Uporabnik/Registracija">Registriraj se tukaj</a></p>
+
+
+            @if (ViewBag.Napaka != null)
+            {
+                <div class="alert alert-danger mt-3">
+                    @ViewBag.Napaka
+                </div>
+            }
+        </form>
+    </div>
+</div>

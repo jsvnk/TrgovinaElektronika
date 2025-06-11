@@ -1,0 +1,34 @@
+﻿@model List<TrgovinaElektronika.Models.Narocilo>
+
+<h2>Moja naročila</h2>
+
+@if (!Model.Any())
+{
+    <p>Nimaš še nobenega naročila.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Št. naročila</th>
+                <th>Datum</th>
+                <th>Št. izdelkov</th>
+                <th>Skupaj</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var n in Model)
+            {
+                <tr>
+                    <td>@n.Id</td>
+                    <td>@n.Datum.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>@n.Postavke.Sum(p => p.Kolicina)</td>
+                    <td>@n.Skupaj €</td>
+                    <td><a class="btn btn-sm btn-primary" href="/Kosarica/Pregled/@n.Id">Podrobnosti</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

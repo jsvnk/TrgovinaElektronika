@@ -1,0 +1,29 @@
+﻿@model TrgovinaElektronika.Models.Narocilo
+
+<h2>Podrobnosti naročila št. @Model.Id</h2>
+<p>Uporabnik: <strong>@Model.UporabnikIme</strong></p>
+<p>Datum: @Model.Datum</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Cena</th>
+            <th>Količina</th>
+            <th>Skupaj</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Postavke)
+        {
+            <tr>
+                <td>@p.Naziv</td>
+                <td>@p.Cena €</td>
+                <td>@p.Kolicina</td>
+                <td>@(p.Cena * p.Kolicina) €</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p><strong>Skupna cena:</strong> @Model.Skupaj €</p>

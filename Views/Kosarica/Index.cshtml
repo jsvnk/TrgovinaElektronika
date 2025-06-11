@@ -1,0 +1,34 @@
+﻿@model List<TrgovinaElektronika.Models.PostavkaKosarice>
+
+<h2>Moja košarica</h2>
+
+@if (!Model.Any())
+{
+    <p>Košarica je prazna.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Naziv</th>
+                <th>Cena</th>
+                <th>Količina</th>
+                <th>Skupaj</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Naziv</td>
+                    <td>@p.Cena €</td>
+                    <td>@p.Kolicina</td>
+                    <td>@(p.Cena * p.Kolicina) €</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Kosarica/Oddaj">Oddaj naročilo</a>
+    <a href="/Kosarica/Izprazni">Izprazni košarico</a>
+}

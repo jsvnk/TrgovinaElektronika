@@ -1,0 +1,39 @@
+﻿@model TrgovinaElektronika.Models.Uporabnik
+@{
+    ViewData["Title"] = "Registracija";
+}
+
+<h2>Registracija novega uporabnika</h2>
+
+<div class="row mt-3">
+    <div class="col-md-6 offset-md-3">
+        <form method="post" class="border rounded p-4 shadow-sm bg-light">
+            <div class="mb-3">
+                <label for="ime" class="form-label">Ime</label>
+                <input type="text" name="Ime" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="priimek" class="form-label">Priimek</label>
+                <input type="text" name="Priimek" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="Email" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="geslo" class="form-label">Geslo</label>
+                <input type="password" name="Geslo" class="form-control" required />
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Registriraj se</button>
+
+            @if (ViewBag.Napaka != null)
+            {
+                <div class="alert alert-danger mt-3">@ViewBag.Napaka</div>
+            }
+        </form>
+    </div>
+</div>
