@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9CNiHqFKyWk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rifot\\source\\repos\\TrgovinaElektronika\\TrgovinaElektronika\\TrgovinaElektronika.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rifot\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512"
+  ],
+  "logs": []
+}
