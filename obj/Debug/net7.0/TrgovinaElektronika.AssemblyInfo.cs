@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrgovinaElektronika")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9092d4b17e6d64a2bc76aa3bf3308bbd3cd0042a")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrgovinaElektronika")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrgovinaElektronika")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
